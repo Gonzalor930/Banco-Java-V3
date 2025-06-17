@@ -1,57 +1,57 @@
 # Banco-Java-V3
-Proyecto de consola en Java que simula las operaciones básicas de un banco. Permite crear cuentas (corriente, ahorro o común), consultar saldos, realizar depósitos y retiros con validación de PIN, listar cuentas por tipo y guardar datos en archivo. El código implementa principios de POO (herencia, clases abstractas, encapsulamiento)
+A Java console project that simulates the basic operations of a bank. It allows users to create accounts (checking, savings, or regular accounts), check balances, make deposits and withdrawals with PIN validation, list accounts by type, and save data to a file. The code implements OOP principles (inheritance, abstract classes, encapsulation).
 
-Esta versión representa una evolución respecto al modelo anterior Banco-Java 2.0.
+This version represents an evolution from the previous Banco-Java 2.0 model.
 
-🧱 Mejoras respecto a la versión anterior
-🔄 Arquitectura y organización
-🧩 Separación en clases limpias y modulares, con una estructura clara y mantenible.
+Improvements over the previous version
+Architecture and organization
+Separation into clean, modular classes, with a clear and maintainable structure.
 
-💡 Aplicación del principio de responsabilidad única (SRP).
+Application of the single responsibility principle (SRP).
 
-🧠 Se comienza a incorporar el modelo MVC de forma progresiva.
+The MVC model is gradually being incorporated.
 
-💻 Interfaces y abstracciones
-🔌 Se implementó una interfaz ICuenta, que define los métodos principales de cualquier cuenta bancaria.
+Interfaces and abstractions
+An ICuenta interface was implemented, which defines the main methods of any bank account.
 
-📚 La clase CuentaAbstracta implementa esta interfaz y sirve como clase base común para:
+The AbstractAccount class implements this interface and serves as a common base class for:
 
-CuentaBancaria (común)
+BankAccount (regular)
 
-CuentaAhorro
+SavingsAccount
 
-CuentaCorriente
+CheckingAccount
 
-🧪 Validaciones y robustez
-✅ Confirmación de datos ingresados por consola, con opción a corregir antes de crear una cuenta.
+Validations and Robustness
+Confirmation of entered data via the console, with the option to correct it before creating an account.
 
-🔐 Validación de PIN antes de realizar operaciones sensibles como retiro.
+PIN validation before performing sensitive operations such as withdrawals.
 
-❗ Manejo de errores con try-catch, para evitar caídas por entradas incorrectas del usuario (por ejemplo, letras donde se espera un número).
+Error handling with try-catch to prevent crashes due to incorrect user input (e.g., letters where a number is expected).
 
-🔁 Ciclos de reintento si se ingresan datos inválidos.
+Retry cycles if invalid data is entered.
 
-💸 Operaciones bancarias mejoradas
-💰 CuentaCorriente ahora permite saldo negativo hasta un límite de -50000. Esto se logra sobrescribiendo (@Override) el método retirar.
+Improved Banking Operations
+CheckingAccount now allows negative balances up to a limit of -50000. This is achieved by overriding (@Override) the withdraw method.
 
-📊 Se agregó soporte para listar cuentas por tipo (corriente, ahorro, común).
+Added support for listing accounts by type (checking, savings, regular).
 
-🔍 Se puede buscar una cuenta por ID y consultar detalles luego de validar el PIN.
+You can search for an account by ID and view details after validating the PIN.
 
-🧾 Persistencia de datos
-📁 Se guarda la información de las cuentas en un archivo .txt mediante escritura con FileWriter.
+Data Persistence
+Account information is saved in a .txt file by writing it with FileWriter.
 
-📂 Preparado para una futura lectura automática desde archivo en versiones posteriores.
+Prepared for future automatic reading from a file in later versions.
 
-🎛️ Menú interactivo
-Menú de consola mejorado:
+Interactive Menu
+Improved console menu:
 
-Carga de cuentas paso a paso con confirmación.
+Step-by-step account loading with confirmation.
 
-Opciones protegidas con validación de PIN.
+Options protected with PIN validation.
 
-Acceso a listado de todas las cuentas o por tipo.
+Access to a list of all accounts or by type.
 
-Posibilidad de eliminar o consultar cuentas.
+Ability to delete or view accounts.
 
-Modularización: el menú está encapsulado en una clase MenuBanco.
+Modularization: The menu is encapsulated in a MenuBanco class.
